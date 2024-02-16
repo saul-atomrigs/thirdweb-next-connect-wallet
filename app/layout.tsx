@@ -1,31 +1,30 @@
-'use client';
+"use client"
 
 import {
-  ThirdwebProvider,
-  metamaskWallet,
-  coinbaseWallet,
-  walletConnect,
-} from '@thirdweb-dev/react';
+ ThirdwebProvider,
+ metamaskWallet,
+ coinbaseWallet,
+ walletConnect,
+} from "@thirdweb-dev/react"
 
 export default function RootLayout({
-  children,
+ children,
 }: Readonly<{
-  children: React.ReactNode;
+ children: React.ReactNode
 }>) {
-  return (
-    <html lang='en'>
-      <ThirdwebProvider
-        supportedWallets={[
-          metamaskWallet({
-            recommended: true,
-          }),
-          coinbaseWallet(),
-          walletConnect(),
-        ]}
-        clientId='<your_client_id>'
-      >
-        <body>{children}</body>
-      </ThirdwebProvider>
-    </html>
-  );
+ return (
+  <html lang="en">
+   <ThirdwebProvider
+    supportedWallets={[
+     metamaskWallet({
+      recommended: true,
+     }),
+     coinbaseWallet(),
+     walletConnect(),
+    ]}
+    clientId="<your_client_id>">
+    <body>{children}</body>
+   </ThirdwebProvider>
+  </html>
+ )
 }
