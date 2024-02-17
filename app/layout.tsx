@@ -22,7 +22,7 @@ export default function RootLayout({
      coinbaseWallet(),
      walletConnect(),
     ]}
-    clientId="<your_client_id>">
+    clientId={process.env.THIRDWEB_API_KEY}>
     <body>{children}</body>
    </ThirdwebProvider>
   </html>
